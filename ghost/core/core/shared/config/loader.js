@@ -19,6 +19,9 @@ function loadNconf(options) {
     const customConfigPath = options.customConfigPath || process.cwd();
     const nconf = new Nconf.Provider();
 
+    console.log({ customConfigPath })
+    console.log({ env })
+
     // ## Load Config
 
     // no channel can override the overrides
@@ -26,7 +29,7 @@ function loadNconf(options) {
 
     // command line arguments take precedence, then environment variables
     nconf.argv();
-    nconf.env({separator: '__', parseValues: true});
+    nconf.env({ separator: '__', parseValues: true });
 
     // Now load various config json files
     nconf.file('custom-env', path.join(customConfigPath, 'config.' + env + '.json'));

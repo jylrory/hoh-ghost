@@ -50,7 +50,7 @@ class ParentRouter {
         this.identifier = security.identifier.uid(10);
 
         this.name = name;
-        this._router = GhostRouter({mergeParams: true, parent: this});
+        this._router = GhostRouter({ mergeParams: true, parent: this });
     }
 
     /**
@@ -210,12 +210,12 @@ class ParentRouter {
 
         return _.find(this.data.router, function (entries, type) {
             if (routerType === type) {
-                return _.find(entries, {redirect: true, slug: slug});
+                return _.find(entries, { redirect: true, slug: slug });
             }
         });
     }
 
-    reset() {}
+    reset() { }
 }
 
 module.exports = ParentRouter;

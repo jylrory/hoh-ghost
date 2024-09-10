@@ -16,8 +16,9 @@ if (nodeVersion < 18) {
 const config = require('../../ghost/core/core/shared/config/loader').loadNconf({
     customConfigPath: path.join(__dirname, '../../ghost/core')
 });
+console.log(config.getSiteUrl())
 
-const tsPackages = fs.readdirSync(path.resolve(__dirname, '../../ghost'), {withFileTypes: true})
+const tsPackages = fs.readdirSync(path.resolve(__dirname, '../../ghost'), { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name)
     .filter(packageFolder => {
@@ -223,7 +224,7 @@ async function handleStripe() {
 
     console.log(`Running projects: ${commands.map(c => chalk.green(c.name)).join(', ')}`);
 
-    const {result} = concurrently(commands, {
+    const { result } = concurrently(commands, {
         prefix: 'name',
         killOthers: ['failure', 'success']
     });

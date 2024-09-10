@@ -5,7 +5,7 @@ const urlUtils = require('../../../../shared/url-utils');
 
 const _private = {};
 
-_private.redirectUrl = ({redirectTo, query, pathname}) => {
+_private.redirectUrl = ({ redirectTo, query, pathname }) => {
     const parts = url.parse(redirectTo);
 
     // CASE: ensure we always add a trailing slash to reduce the number of redirects
@@ -30,7 +30,7 @@ _private.redirectUrl = ({redirectTo, query, pathname}) => {
  * 1. required SSL redirects
  * 2. redirect to the correct admin url
  */
-_private.getAdminRedirectUrl = ({requestedHost, requestedUrl, queryParameters, secure}) => {
+_private.getAdminRedirectUrl = ({ requestedHost, requestedUrl, queryParameters, secure }) => {
     const siteUrl = urlUtils.urlFor('home', true);
     const adminUrl = urlUtils.urlFor('admin', true);
     const siteHost = url.parse(siteUrl).host;
@@ -70,7 +70,7 @@ _private.getAdminRedirectUrl = ({requestedHost, requestedUrl, queryParameters, s
  *
  * 1. required SSL redirects
  */
-_private.getFrontendRedirectUrl = ({requestedHost, requestedUrl, queryParameters, secure}) => {
+_private.getFrontendRedirectUrl = ({ requestedHost, requestedUrl, queryParameters, secure }) => {
     const siteUrl = urlUtils.urlFor('home', true);
 
     debug('getFrontendRedirectUrl', requestedHost, requestedUrl, siteUrl);
