@@ -411,10 +411,7 @@ export default Model.extend(Comparable, ValidationEngine, {
     }),
 
     classicEditUrl: computed("id", function () {
-        const isLocal = window.location.hostname === "localhost";
-        return isLocal
-            ? `/ghost/classic-editor?id=${this.id}`
-            : `/ghost/classic-editor?id=${this.id}`;
+        return  `/ghost/classic-editor?id=${this.id}&type=${this.displayName}`;
     }),
 
     _getPublishedAtBlogTZ() {

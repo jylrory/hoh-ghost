@@ -138,8 +138,7 @@ export default class PostsController extends Controller {
     }
 
     get newPostUrl() {
-        const isLocal = this.config.blogDomain.includes('localhost');
-        return isLocal ? `http://localhost:3000/ghost/classic-editor` : `/ghost/classic-editor`;
+        return `/ghost/classic-editor?type=post`;
     }
 
     @action

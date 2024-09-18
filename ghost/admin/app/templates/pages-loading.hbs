@@ -22,7 +22,8 @@
                 @onOrderChange={{optional null}}
             />
 
-            <LinkTo @route="lexical-editor.new" @model="page" class="gh-btn gh-btn-primary view-actions-top-row" data-test-new-page-button={{true}}><span>New page</span></LinkTo>
+            <a href="/ghost/classic-editor?type=page" class="gh-btn gh-btn-primary view-actions-top-row"><span>New page</span></a>
+            {{!-- <LinkTo @route="lexical-editor.new" @model="page" class="gh-btn gh-btn-primary view-actions-top-row" data-test-new-page-button={{true}}><span>New page</span></LinkTo> --}}
         </section>
     </GhCanvasHeader>
 
